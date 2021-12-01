@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="960" height="960">
+  <g transform="translate(480,480)">
+    <g class="groups">
+      <g>
+        <path style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);" d="M2.694222958124177e-14,-440A440,440,0,0,1,428.2469695406504,101.01748897715304L399.04831252651513,94.12993291052896A410,410,0,0,0,2.510525938252074e-14,-410Z"/>
+        <g class="group-tick" transform="rotate(-90) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">0k</text>
+        </g>
+        <g class="group-tick" transform="rotate(-86.51459155902616) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-83.02918311805233) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-79.54377467707849) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-76.05836623610466) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-72.57295779513082) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">5k</text>
+        </g>
+        <g class="group-tick" transform="rotate(-69.08754935415699) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-65.60214091318315) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-62.116732472209314) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-58.63132403123548) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-55.14591559026164) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">10k</text>
+        </g>
+        <g class="group-tick" transform="rotate(-51.66050714928781) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-48.175098708313975) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-44.68969026734013) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-41.2042818263663) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-37.71887338539246) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">15k</text>
+        </g>
+        <g class="group-tick" transform="rotate(-34.23346494441863) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-30.748056503444786) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-27.262648062470966) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-23.777239621497117) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-20.291831180523275) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">20k</text>
+        </g>
+        <g class="group-tick" transform="rotate(-16.80642273954946) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-13.32101429857562) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-9.835605857601777) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-6.35019741662795) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(-2.8647889756541076) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">25k</text>
+        </g>
+        <g class="group-tick" transform="rotate(0.6206194653197343) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(4.106027906293576) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(7.591436347267404) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(11.076844788241232) translate(440,0)">
+          <line x2="6"/>
+        </g>
+      </g>
+      <g>
+        <path style="fill: rgb(255, 221, 137); stroke: rgb(179, 155, 96);" d="M422.66300216119174,122.29467120070443A440,440,0,0,1,25.732550816524103,439.24689620812916L23.97805871539746,409.29824419393856A410,410,0,0,0,393.845070195656,113.95639816429276Z"/>
+        <g class="group-tick" transform="rotate(16.137441081708857) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">0k</text>
+        </g>
+        <g class="group-tick" transform="rotate(19.622849522682714) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(23.108257963656527) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(26.59366640463037) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(30.07907484560421) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(33.56448328657805) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">5k</text>
+        </g>
+        <g class="group-tick" transform="rotate(37.049891727551866) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(40.53530016852571) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(44.020708609499536) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(47.50611705047339) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(50.99152549144722) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">10k</text>
+        </g>
+        <g class="group-tick" transform="rotate(54.476933932421076) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(57.962342373394875) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(61.4477508143687) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(64.93315925534256) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(68.41856769631639) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">15k</text>
+        </g>
+        <g class="group-tick" transform="rotate(71.90397613729024) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(75.38938457826407) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(78.8747930192379) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(82.36020146021173) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(85.84560990118555) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">20k</text>
+        </g>
+      </g>
+      <g>
+        <path style="fill: rgb(149, 114, 68); stroke: rgb(104, 80, 48);" d="M3.747196851424064,439.98404347857513A440,440,0,0,1,-283.1843634478886,-336.75898844517L-263.8763386673507,-313.79814832390844A410,410,0,0,0,3.4917061570087866,409.98513142321775Z"/>
+        <g class="group-tick" transform="rotate(89.51204281826367) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em">0k</text>
+        </g>
+        <g class="group-tick" transform="rotate(92.9974512592375) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(96.48285970021132) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(99.96826814118515) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(103.45367658215898) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(106.93908502313283) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">5k</text>
+        </g>
+        <g class="group-tick" transform="rotate(110.42449346410666) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(113.90990190508049) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(117.39531034605432) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(120.88071878702814) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(124.366127228002) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">10k</text>
+        </g>
+        <g class="group-tick" transform="rotate(127.85153566897583) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(131.33694410994966) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(134.82235255092348) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(138.30776099189737) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(141.79316943287117) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">15k</text>
+        </g>
+        <g class="group-tick" transform="rotate(145.278577873845) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(148.76398631481882) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(152.24939475579265) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(155.73480319676653) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(159.22021163774033) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">20k</text>
+        </g>
+        <g class="group-tick" transform="rotate(162.7056200787142) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(166.19102851968802) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(169.67643696066187) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(173.16184540163567) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(176.64725384260947) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">25k</text>
+        </g>
+        <g class="group-tick" transform="rotate(180.13266228358333) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(183.61807072455713) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(187.10347916553104) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(190.58888760650484) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(194.0742960474787) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">30k</text>
+        </g>
+        <g class="group-tick" transform="rotate(197.55970448845255) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(201.04511292942635) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(204.53052137040015) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(208.015929811374) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(211.50133825234792) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">35k</text>
+        </g>
+        <g class="group-tick" transform="rotate(214.98674669332166) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(218.47215513429552) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(221.95756357526938) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(225.44297201624317) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(228.92838045721703) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">40k</text>
+        </g>
+      </g>
+      <g>
+        <path style="fill: rgb(242, 98, 35); stroke: rgb(169, 69, 25);" d="M-265.999522246438,-350.4914466355302A440,440,0,0,1,-21.99083447909925,-439.45011457378513L-20.491459400978844,-409.48760676193615A410,410,0,0,0,-247.86319118418086,-326.5943025467441Z"/>
+        <g class="group-tick" transform="rotate(232.80393788075355) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">0k</text>
+        </g>
+        <g class="group-tick" transform="rotate(236.28934632172735) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(239.77475476270115) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(243.26016320367506) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(246.7455716446488) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(250.23098008562272) translate(440,0)">
+          <line x2="6"/>
+          <text x="8" dy=".35em" transform="rotate(180) translate(-16)" style="text-anchor: end;">5k</text>
+        </g>
+        <g class="group-tick" transform="rotate(253.71638852659652) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(257.2017969675704) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(260.68720540854423) translate(440,0)">
+          <line x2="6"/>
+        </g>
+        <g class="group-tick" transform="rotate(264.17261384951803) translate(440,0)">
+          <line x2="6"/>
+        </g>
+      </g>
+    </g>
+    <g class="ribbons">
+      <path d="M2.510525938252074e-14,-410A410,410,0,0,1,272.9461639226633,-305.9418108070596Q0,0,2.510525938252074e-14,-410Z" style="fill: rgb(0, 0, 0); stroke: rgb(0, 0, 0);"/>
+      <path d="M391.69303884469844,-121.14686673870506A410,410,0,0,1,409.3297902064948,23.433370425675786Q0,0,72.27214606335144,403.57990151071397A410,410,0,0,1,23.97805871539746,409.29824419393856Q0,0,391.69303884469844,-121.14686673870506Z" style="fill: rgb(255, 221, 137); stroke: rgb(179, 155, 96);"/>
+      <path d="M272.9461639226633,-305.9418108070596A410,410,0,0,1,391.69303884469844,-121.14686673870506Q0,0,-380.088988411556,-153.72820459590378A410,410,0,0,1,-263.8763386673507,-313.79814832390844Q0,0,272.9461639226633,-305.9418108070596Z" style="fill: rgb(149, 114, 68); stroke: rgb(104, 80, 48);"/>
+      <path d="M409.3297902064948,23.433370425675786A410,410,0,0,1,399.04831252651513,94.12993291052896Q0,0,-93.08277235866908,-399.2938735944044A410,410,0,0,1,-68.31611043472337,-404.26836266899574Q0,0,409.3297902064948,23.433370425675786Z" style="fill: rgb(242, 98, 35); stroke: rgb(169, 69, 25);"/>
+      <path d="M393.845070195656,113.95639816429276A410,410,0,0,1,257.13712155315295,319.3438596863247Q0,0,393.845070195656,113.95639816429276Z" style="fill: rgb(255, 221, 137); stroke: rgb(179, 155, 96);"/>
+      <path d="M3.4917061570087866,409.98513142321775A410,410,0,0,1,-339.0385147702005,230.54909564432594Q0,0,122.14722160681434,391.3822380406855A410,410,0,0,1,72.27214606335144,403.57990151071397Q0,0,3.4917061570087866,409.98513142321775Z" style="fill: rgb(255, 221, 137); stroke: rgb(179, 155, 96);"/>
+      <path d="M257.13712155315295,319.3438596863247A410,410,0,0,1,122.14722160681434,391.3822380406855Q0,0,-68.31611043472337,-404.26836266899574A410,410,0,0,1,-43.8605054659907,-407.64722010614497Q0,0,257.13712155315295,319.3438596863247Z" style="fill: rgb(242, 98, 35); stroke: rgb(169, 69, 25);"/>
+      <path d="M-339.0385147702005,230.54909564432594A410,410,0,0,1,-407.739680130849,42.99247895612588Q0,0,-339.0385147702005,230.54909564432594Z" style="fill: rgb(149, 114, 68); stroke: rgb(104, 80, 48);"/>
+      <path d="M-407.739680130849,42.99247895612588A410,410,0,0,1,-380.088988411556,-153.72820459590378Q0,0,-43.8605054659907,-407.64722010614497A410,410,0,0,1,-20.491459400978844,-409.48760676193615Q0,0,-407.739680130849,42.99247895612588Z" style="fill: rgb(242, 98, 35); stroke: rgb(169, 69, 25);"/>
+      <path d="M-247.86319118418086,-326.5943025467441A410,410,0,0,1,-93.08277235866908,-399.2938735944044Q0,0,-247.86319118418086,-326.5943025467441Z" style="fill: rgb(242, 98, 35); stroke: rgb(169, 69, 25);"/>
+    </g>
+  </g>
+</svg>

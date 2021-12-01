@@ -1,0 +1,86 @@
+---
+title: "Debugging with False Colours"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Debugging with False Colours}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height = 5, 
+  fig.width = 5
+)
+set.seed(1)
+```
+
+```{r setup}
+library(svgparser)
+```
+
+# Introduction
+
+Sometimes when debugging an issue with an SVG it can be difficult to distinguish
+adjacent areas that are similarly coloured.
+
+`svgparser::read_svg()` allows you to specify the name of a false colour palette
+which can be used to on the issues - or at least look like a 
+work of Warhollian [pop art](https://en.wikipedia.org/wiki/Pop_art) while you try and figure it out!
+
+# How
+
+Simply set the `false_colour` argument to `svgparser::read_svg()` to one of:
+'rainbow', 'hcl', 'heat', 'terrain', 'topo', and 'cm'.
+
+`svgparser` will then sample randomly from these standard R colour palettes 
+instead of using the correct colour.
+
+
+## `Original Image
+
+
+```{r}
+tiger_filename <- system.file("tiger.svg", package = "svgparser")
+tiger_grob <- svgparser::read_svg(tiger_filename)
+grid::grid.draw(tiger_grob)
+```
+
+## `false_colour = 'rainbow'`
+
+
+```{r}
+tiger_filename <- system.file("tiger.svg", package = "svgparser")
+tiger_grob <- svgparser::read_svg(tiger_filename, false_colour = 'rainbow')
+grid::grid.draw(tiger_grob)
+```
+
+
+## `false_colour = 'hcl'`
+
+```{r}
+tiger_filename <- system.file("tiger.svg", package = "svgparser")
+tiger_grob <- svgparser::read_svg(tiger_filename, false_colour = 'hcl')
+grid::grid.draw(tiger_grob)
+```
+
+
+## `false_colour = 'heat'`
+
+```{r}
+tiger_filename <- system.file("tiger.svg", package = "svgparser")
+tiger_grob <- svgparser::read_svg(tiger_filename, false_colour = 'heat')
+grid::grid.draw(tiger_grob)
+```
+
+
+## `false_colour = 'terrain'`
+
+```{r}
+tiger_filename <- system.file("tiger.svg", package = "svgparser")
+tiger_grob <- svgparser::read_svg(tiger_filename, false_colour = 'terrain')
+grid::grid.draw(tiger_grob)
+```
+

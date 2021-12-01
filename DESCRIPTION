@@ -1,0 +1,31 @@
+Package: svgparser
+Type: Package
+Title: Read SVG as Grobs and Data Frames
+Version: 0.1.0
+Author: mikefc
+Maintainer: mikefc <mikefc@coolbutuseless.com>
+Description: Read SVG to grid graphics objects (i.e. grobs), and 
+    data.frames.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.2
+URL: https://github.com/coolbutuseless/svgparser, https://coolbutuseless.github.io/package/svgparser
+Imports:
+    xml2,
+    stringi,
+    cssparser (>= 0.1.1)
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat (>= 3.0.0),
+    vdiffr,
+    ggplot2,
+    gggrid,
+    minisvg
+Remotes:
+    coolbutuseless/cssparser,
+    coolbutuseless/minisvg,
+    pmur002/gggrid
+Config/testthat/edition: 3
+VignetteBuilder: knitr

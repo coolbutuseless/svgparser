@@ -1,0 +1,56 @@
+---
+title: "Annotating ggplot2 with SVG"
+output: html_document
+vignette: >
+  %\VignetteIndexEntry{Annotating ggplot2 with SVG}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.height = 5, 
+  fig.width = 5
+)
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+# Ensure that images are rendered using a device which understands patterns
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+knitr::opts_chunk$set(dev.args = list(png = list(type = "cairo")))
+```
+
+```{r setup}
+library(grid)
+library(ggplot2)
+library(svgparser)
+```
+
+
+## Load SVG from web
+
+Since `{svgparser}` uses `{xml2}`, it can load SVG files from a URL.
+
+Note the linear gradient on the R logo is preserved in the conversion to an 
+R grob object.
+
+```{r out.width = "30%", fig.height = 4}
+rlogo_url <- 'https://www.r-project.org/logo/Rlogo.svg'
+rlogo     <- svgparser::read_svg(rlogo_url)
+
+grid.draw(rlogo)
+```
+
+
+## Add 'grob' to ggplot2 with `annotation_custom()`
+
+```{r fig.height = 4}
+ggplot(mtcars) + 
+  geom_point(aes(mpg, wt)) +
+  annotation_custom(rlogo, xmin = 28, xmax = 33, ymin = 4, ymax = 5) +
+  labs(title = "svgparser::read_svg() + ggplot2") + 
+  theme_bw()
+```
+
+

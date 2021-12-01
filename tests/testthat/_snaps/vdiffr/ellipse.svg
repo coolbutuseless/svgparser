@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' class='svglite' data-engine-version='2.0' width='720.00pt' height='576.00pt' viewBox='0 0 720.00 576.00'>
+<defs>
+  <style type='text/css'><![CDATA[
+    .svglite line, .svglite polyline, .svglite polygon, .svglite path, .svglite rect, .svglite circle {
+      fill: none;
+      stroke: #000000;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-miterlimit: 10.00;
+    }
+  ]]></style>
+</defs>
+<rect width='100%' height='100%' style='stroke: none; fill: #FFFFFF;'/>
+<defs>
+  <clipPath id='cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA='>
+    <rect x='0.00' y='0.00' width='720.00' height='576.00' />
+  </clipPath>
+</defs>
+<g clip-path='url(#cpMC4wMHw3MjAuMDB8MC4wMHw1NzYuMDA=)'>
+<polygon points='1234.29,329.14 1232.03,350.65 1225.30,371.91 1214.15,392.71 1198.72,412.81 1179.16,432.00 1155.71,450.06 1128.61,466.79 1098.16,482.02 1064.69,495.57 1028.57,507.30 990.20,517.07 950.00,524.79 908.40,530.36 865.86,533.73 822.86,534.86 779.85,533.73 737.32,530.36 695.72,524.79 655.51,517.07 617.14,507.30 581.03,495.57 547.56,482.02 517.11,466.79 490.00,450.06 466.55,432.00 447.00,412.81 431.57,392.71 420.42,371.91 413.68,350.65 411.43,329.14 413.68,307.64 420.42,286.37 431.57,265.57 447.00,245.47 466.55,226.29 490.00,208.23 517.11,191.49 547.56,176.27 581.03,162.72 617.14,150.99 655.51,141.21 695.72,133.50 737.32,127.92 779.85,124.56 822.86,123.43 865.86,124.56 908.40,127.92 950.00,133.50 990.20,141.21 1028.57,150.99 1064.69,162.72 1098.16,176.27 1128.61,191.49 1155.71,208.23 1179.16,226.29 1198.72,245.47 1214.15,265.57 1225.30,286.37 1232.03,307.64 ' style='stroke-width: 1.50; stroke: #800080; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 4.00; fill: #FFFF00;' />
+</g>
+</svg>
