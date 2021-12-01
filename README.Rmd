@@ -64,7 +64,7 @@ clipping paths, yes, works on the few examples tested
 
 <!-- badges: start -->
 ![](https://img.shields.io/badge/cool-useless-green.svg)
-[![R-CMD-check](https://github.com/coolbutuseless/svgparser-dev/workflows/R-CMD-check/badge.svg)](https://github.com/coolbutuseless/svgparser-dev/actions)
+[![R-CMD-check](https://github.com/coolbutuseless/svgparser/workflows/R-CMD-check/badge.svg)](https://github.com/coolbutuseless/svgparser/actions)
 <!-- badges: end -->
 
 `svgparser` loads vector-based **SVG** images as R vector objects.
