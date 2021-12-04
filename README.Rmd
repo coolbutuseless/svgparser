@@ -51,6 +51,9 @@ animation     , no, Impossible?
 linetypes     , no, Planned feature - but R is much more limited compared to SVGs linetype features.
 masks         , no, need example SVG
 clipping paths, yes, works on the few examples tested
+<a>           , yes, treated as a <g> grouping element. {grid} doesn't support clickable links though.
+<switch>      , meh, supported; but instead of selecting the best child element it selects the first non-null child. Needs fixing.
+<image>       , yes, image support via {magick}. Does not currently handle transforms for images. Aspect ratio is fixed to match that of image.
 ", show_col_types = FALSE, lazy = FALSE)
 ```
 

@@ -196,6 +196,9 @@ read_svg <- function(svg_file,
 
   state$ymax <- viewbox[[4]]
 
+  state$width  <- viewbox[[3]]
+  state$height <- viewbox[[4]]
+
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # With 'default.units' of 'snpc' or 'npc', just scale any coordinates by
   # the height in order to bring all coords into the range 0/1
@@ -326,6 +329,7 @@ parse_svg_elem <- function(elem, state) {
 
   elem_grob <- switch(
     tag,
+    a        =,
     g        = parse_svg_group   (elem, state),
     path     = parse_svg_path    (elem, state),
     polyline = parse_svg_polyline(elem, state),
@@ -336,6 +340,8 @@ parse_svg_elem <- function(elem, state) {
     ellipse  = parse_svg_ellipse (elem, state),
     text     = parse_svg_text    (elem, state),
     use      = parse_svg_use     (elem, state),
+    switch   = parse_svg_switch  (elem, state),
+    image    = parse_svg_image   (elem, state),
     defs     = NULL,
     style    = NULL,
     metadata = NULL,
@@ -437,6 +443,172 @@ xml_duplicate <- function(x) {
   # xml2::read_xml(as.character(x))
   xml2::xml_unserialize(xml2::xml_serialize(x, NULL))
 }
+
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#' @rdname parse_svg_path
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parse_svg_switch <- function(elem, state) {
+
+  if (!isTRUE(state$warned[['switch']])) {
+    message("<switch> tag support is currently experimental. First non-NULL child element will be used.")
+    state$warned[['switch']] <- TRUE
+  }
+
+
+  elem_grob <- NULL
+  children  <- xml2::xml_children(elem)
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Loop over all the child elements, and just pick the first one that is
+  # not NULL or empty
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  for (elem in children) {
+    elem_grob <- parse_svg_elem(elem, state = state)
+
+    if (!is.null(elem_grob) && !inherits(elem_grob, 'null')) {
+      break;
+    }
+  }
+
+  elem_grob
+}
+
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+#' @rdname parse_svg_path
+#~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+parse_svg_image <- function(elem, state) {
+
+  addr <- xml2::xml_attr(elem, "href") %||% xml2::xml_attr(elem, "xlink:href")
+
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Find the size + location
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  x_raw      <- xml2::xml_attr(elem, 'x'     , default = "0")
+  y_raw      <- xml2::xml_attr(elem, 'y'     , default = "0")
+  width_raw  <- xml2::xml_attr(elem, 'width' , default = "100") # SVG spec these *must* be present
+  height_raw <- xml2::xml_attr(elem, 'height', default = "100") # SVG spec these *must* be present
+
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Convert to numeric values
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  x      <- css_value_as_numeric(x_raw)
+  y      <- css_value_as_numeric(y_raw)
+  width  <- css_value_as_numeric(width_raw)
+  height <- css_value_as_numeric(height_raw)
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Convert relative coords to absolute
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if (is_percentage(     x_raw)) x      <-      x * state$width
+  if (is_percentage(     y_raw)) y      <-      y * state$height
+  if (is_percentage( width_raw)) width  <-  width * state$width
+  if (is_percentage(height_raw)) height <- height * state$height
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Scale for the device setting
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  x <- xpos(x, state)
+  y <- ypos(y, state)
+
+  width  <- width  * state$scale * state$user_scale
+  height <- height * state$scale * state$user_scale
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Move the coords of the image to it's centre (rather than corner)
+  # This makes it easier to place tall/wide images
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  x <- x + width/2
+  y <- y - height/2
+
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Fetch an image from a URL or data URI
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if (is.null(addr)) {
+    image <- NULL
+  } else if (grepl("^data:.*;base64,", addr)) {
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # Decode the Base64 encoded image
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    base64_txt <- gsub("data:.*?;base64,", "", addr)
+
+    if (requireNamespace('openssl', quietly = TRUE)) {
+      obj <- openssl::base64_decode(base64_txt)
+    } else {
+      message("Install {openssl} for <image> support with base64 encoded images")
+      image <- NULL
+    }
+
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    # go via the file system to save the image and then load it back in
+    #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    tmpfile <- tempfile()
+    writeBin(obj, tmpfile, size = raw())
+
+    if (requireNamespace('magick', quietly = TRUE)) {
+      image        <- magick::image_read(tmpfile)
+      im_info      <- magick::image_info(image)
+      image_aspect <- im_info$width / im_info$height
+    } else {
+      message("Install {magick} for <image> support")
+      image <- NULL
+    }
+
+  } else {
+    message("Loading image with {magick}: ", substr(addr, 1, 100))
+
+    if (requireNamespace('magick', quietly = TRUE)) {
+      image        <- magick::image_read(addr)
+      im_info      <- magick::image_info(image)
+      image_aspect <- im_info$width / im_info$height
+    } else {
+      message("Install {magick} for <image> support")
+      image <- NULL
+    }
+  }
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Didn't get any image
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  if (is.null(image)) {
+    return(NULL)
+  }
+
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # Aspect ratio fiddling
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  display_aspect <- width/height
+
+  if (display_aspect > image_aspect) {
+    width <- width * image_aspect / display_aspect
+  } else if (display_aspect < image_aspect) {
+    height <- height * display_aspect / image_aspect
+  }
+
+
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  # create a rasterGrob
+  #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  elem_grob <- grid::rasterGrob(
+    image,
+    x             = x,
+    y             = y,
+    width         = width,
+    height        = height,
+    interpolate   = TRUE,
+    default.units = state$default.units
+  )
+
+
+
+  elem_grob
+}
+
 
 #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #' @rdname parse_svg_path

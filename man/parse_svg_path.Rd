@@ -3,6 +3,8 @@
 \name{parse_svg_radialGradient}
 \alias{parse_svg_radialGradient}
 \alias{parse_svg_linearGradient}
+\alias{parse_svg_switch}
+\alias{parse_svg_image}
 \alias{parse_svg_use}
 \alias{parse_svg_path}
 \alias{parse_svg_polyline}
@@ -17,6 +19,10 @@
 parse_svg_radialGradient(elem, state)
 
 parse_svg_linearGradient(elem, state)
+
+parse_svg_switch(elem, state)
+
+parse_svg_image(elem, state)
 
 parse_svg_use(elem, state)
 

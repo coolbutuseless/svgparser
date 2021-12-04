@@ -575,6 +575,45 @@ style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; backgroun
 works on the few examples tested
 </td>
 </tr>
+<tr>
+<td style="text-align:left;">
+&lt;a&gt;
+</td>
+<td style="text-align:left;">
+<span
+style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: lightgreen !important;">yes</span>
+</td>
+<td style="text-align:left;">
+treated as a &lt;g&gt; grouping element. {grid} doesn’t support
+clickable links though.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;switch&gt;
+</td>
+<td style="text-align:left;">
+<span
+style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: lemonchiffon !important;">meh</span>
+</td>
+<td style="text-align:left;">
+supported; but instead of selecting the best child element it selects
+the first non-null child. Needs fixing.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+&lt;image&gt;
+</td>
+<td style="text-align:left;">
+<span
+style="     border-radius: 4px; padding-right: 4px; padding-left: 4px; background-color: lightgreen !important;">yes</span>
+</td>
+<td style="text-align:left;">
+image support via {magick}. Does not currently handle transforms for
+images. Aspect ratio is fixed to match that of image.
+</td>
+</tr>
 </tbody>
 </table>
 
