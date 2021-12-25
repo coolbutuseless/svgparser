@@ -1,7 +1,7 @@
 Package: svgparser
 Type: Package
 Title: Read SVG as Grobs and Data Frames
-Version: 0.1.1
+Version: 0.1.2
 Author: mikefc
 Maintainer: mikefc <mikefc@coolbutuseless.com>
 Description: Read SVG to grid graphics objects (i.e. grobs), and 

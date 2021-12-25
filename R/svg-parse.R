@@ -180,6 +180,10 @@ read_svg <- function(svg_file,
 
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   # Parse out a viewbox for a width/height
+  # According to spec:
+  #   The value of the viewBox attribute is a list of four numbers:
+  #   min-x, min-y, width and height.
+  #   The numbers separated by whitespace and/or a comma
   #~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
   viewbox <- xml2::xml_attr(svg, "viewBox", default = NA)
 
@@ -191,7 +195,7 @@ read_svg <- function(svg_file,
       css_value_as_numeric(xml2::xml_attr(svg, "height", default = 400))
     )
   } else {
-    viewbox <- as.numeric(strsplit(viewbox, "\\s+")[[1]])
+    viewbox <- as.numeric(strsplit(viewbox, "\\s+|,")[[1]])
   }
 
   state$ymax <- viewbox[[4]]
